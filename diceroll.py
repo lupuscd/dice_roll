@@ -1,6 +1,52 @@
 import random
 
 def roll_dice():
+
+    dice_drawing = {
+        1: (
+            "-----",
+            "|   |",
+            "| o |",
+            "|   |",
+            "-----",
+        ),
+        2: (
+            "-----",
+            "|o  |",
+            "|   |",
+            "|  o|",
+            "-----",
+        ),
+        3: (
+            "-----",
+            "|o  |",
+            "| o |",
+            "|  o|",
+            "-----",
+        ),
+        4: (
+            "-----",
+            "|o o|",
+            "|   |",
+            "|o o|",
+            "-----",
+        ),
+        5: (
+            "-----",
+            "|o o|",
+            "| o |",
+            "|o o|",
+            "-----",
+        ),
+        6: (
+            "-----",
+            "|o o|",
+            "|o o|",
+            "|o o|",
+            "-----",
+        ),
+
+    }
     
     while True:
         roll = input('Roll the dice? (y/n): ')
@@ -8,7 +54,7 @@ def roll_dice():
         if roll.lower() == 'y':
             while True:
                 dice = random.randint(1,6)
-                print(dice)
+                print('\n'.join(dice_drawing[dice]))
                 roll_again = input('Roll again? (y/n): ')
                 if roll_again.lower() != 'y':
                     break
